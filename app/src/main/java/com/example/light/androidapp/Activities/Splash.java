@@ -16,65 +16,36 @@ import com.example.light.androidapp.R;
 
 public class Splash extends AppCompatActivity {
 
-    Activity context;
+   final  Context context=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        context=this;
+
+
 
         new Thread(new Runnable() {
             @Override
             public void run() {
+                int i=0;
                 ProgressBar pb = (ProgressBar) findViewById(R.id.splashScreenProgressBar);
-                while (true) {
+                while (i<100) {
                     try {
                         pb.setProgress(pb.getProgress() + 1);
                         Thread.sleep(50);
+                        i++;
                         if(pb.getProgress()==pb.getMax()){
                             pb.setProgress(0);
                         }
                     } catch (InterruptedException e) {
                     }
+
                 }
+                Intent login=new Intent(context,Login.class);
+                startActivity(login);
             }
         }).start();
-
-
-        while (true) {
-            boolean connected = false;
-            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                    connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-                //we are connected to a network
-                connected = true;
-            } else
-                connected = false;
-            if (connected) {
-                Intent login = new Intent(context, MainActivity.class);
-                startActivity(login);
-                finish();
-            } else {
-                AlertDialog.Builder noNetwork = new AlertDialog.Builder(context);
-                noNetwork.setMessage("No network Connection")
-                        .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                finish();
-                            }
-                        });
-                noNetwork.show();
-            }
-
-        }
-
     }
 }
 
