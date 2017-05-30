@@ -26,6 +26,7 @@ public class Register extends AppCompatActivity {
                     public void run() {
                         //aici scrii
 
+
                     }
                 }).start();
             }
