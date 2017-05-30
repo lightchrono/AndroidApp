@@ -70,7 +70,7 @@
         android:id="@+id/RegisterB"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="340dp"
+        android:layout_marginLeft="338dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="212dp"
