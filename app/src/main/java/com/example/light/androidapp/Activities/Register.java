@@ -34,7 +34,7 @@ public class Register extends AppCompatActivity {
                         DataInputStream reader;
                         try
                         {
-                            client=new Socket(InetAddress.getByName("5.15.180.8"),25565);
+                            client=new Socket(InetAddress.getByName("192.168.1.147"),25565);
                             reader=new DataInputStream (client.getInputStream());
                             //writer=new OutputStreamWriter(client.getOutputStream());
                             PrintWriter print=new PrintWriter(client.getOutputStream());
