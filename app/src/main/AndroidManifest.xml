@@ -28,7 +28,10 @@
             android:name=".Activities.Login"
             android:screenOrientation="landscape" />
         <activity android:name=".Activities.Register" />
-        <activity android:name=".Activities.MainMenu" android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".Activities.MainMenu"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Activities.FirstPlayer"></activity>
     </application>
 
 </manifest>
