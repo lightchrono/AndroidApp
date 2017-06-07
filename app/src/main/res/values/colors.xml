@@ -5,4 +5,11 @@
     <color name="colorAccent">#FF4081</color>
     <color name="splashScreenBackground">#007</color>
     <color name="White">#FFF</color>
+    <color name="Red">#FF0000</color>
+    <color name="Purple">#800080</color>
+    <color name="Green">#008000</color>
+    <color name="Orange">#FFA500</color>
+    <color name="TextColor">#3CB371</color>
+
+
 </resources>

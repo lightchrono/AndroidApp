@@ -5,18 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/loginimage"
+
     tools:context="com.example.light.androidapp.Activities.Login">
 
     <TextView
         android:id="@+id/textView"
+        android:textColor="@color/White"
         android:layout_width="142dp"
         android:layout_height="44dp"
         android:text="Username"
         android:textSize="25dp"
-        android:layout_marginLeft="98dp"
+        android:layout_marginLeft="87dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="71dp" />
+        android:layout_marginTop="95dp" />
 
     <EditText
         android:id="@+id/editText3"
@@ -25,9 +28,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toRightOf="@+id/textView"
-        android:layout_marginLeft="47dp"
+        android:layout_marginLeft="40dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="71dp" />
+        android:layout_marginTop="95dp" />
 
     <EditText
         android:id="@+id/editText4"
@@ -37,13 +40,14 @@
         android:inputType="textPassword"
         app:layout_constraintLeft_toRightOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="139dp"
-        android:layout_marginLeft="47dp" />
+        android:layout_marginTop="173dp"
+        android:layout_marginLeft="40dp" />
 
     <TextView
         android:id="@+id/editText5"
         android:layout_width="142dp"
         android:layout_height="42dp"
+        android:textColor="@color/White"
         android:text="Password"
         android:ems="10"
         android:inputType="textPersonName"
@@ -52,16 +56,16 @@
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="139dp" />
+        android:layout_marginTop="173dp" />
 
     <Button
         android:id="@+id/login_loginB"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="259dp"
         android:text="Login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -70,9 +74,9 @@
         android:id="@+id/RegisterB"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="338dp"
+        android:layout_marginLeft="333dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="259dp"
         android:text="Register"/>
 </android.support.constraint.ConstraintLayout>

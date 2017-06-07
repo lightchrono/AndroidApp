@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/registerimage"
     tools:context="com.example.light.androidapp.Activities.Register">
 
     <EditText
@@ -13,7 +14,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="58dp"
         android:layout_marginLeft="257dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:textSize="12dp"/>
@@ -25,12 +26,13 @@
         android:text="Username"
         android:textSize="17dp"
         android:layout_marginLeft="93dp"
+        android:textColor="@color/White"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="58dp"
         app:layout_constraintRight_toLeftOf="@+id/register_username"
         android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.222" />
+        app:layout_constraintHorizontal_bias="0.227" />
 
     <TextView
         android:id="@+id/textView3"
@@ -39,16 +41,17 @@
         android:text="E-mail"
         android:textSize="17dp"
         android:layout_marginLeft="111dp"
+        android:textColor="@color/White"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="73dp" />
+        android:layout_marginTop="116dp" />
 
     <EditText
         android:id="@+id/register_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="99dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="116dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:textSize="12dp"
@@ -64,7 +67,7 @@
         android:layout_marginLeft="257dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="126dp"
+        android:layout_marginTop="174dp"
         android:textSize="12dp"/>
 
     <EditText
@@ -76,7 +79,7 @@
         android:layout_marginLeft="257dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="179dp"
+        android:layout_marginTop="228dp"
         android:textSize="12dp"/>
 
     <TextView
@@ -87,11 +90,12 @@
         android:text="Password"
         android:layout_marginLeft="102dp"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/White"
         app:layout_constraintRight_toLeftOf="@+id/register_password"
         android:layout_marginRight="8dp"
         app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="126dp" />
+        android:layout_marginTop="170dp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -100,9 +104,10 @@
         android:textSize="17dp"
         android:text="Confirm Password"
         android:layout_marginLeft="50dp"
+        android:textColor="@color/White"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="179dp"
+        android:layout_marginTop="228dp"
         app:layout_constraintRight_toLeftOf="@+id/register_password2"
         android:layout_marginRight="8dp"
         app:layout_constraintHorizontal_bias="1.0" />
@@ -111,8 +116,8 @@
         android:id="@+id/register_cancel"
         android:layout_width="103dp"
         android:layout_height="37dp"
-        android:layout_marginLeft="149dp"
-        android:layout_marginTop="234dp"
+        android:layout_marginLeft="146dp"
+        android:layout_marginTop="280dp"
         android:text="Cancel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -121,8 +126,8 @@
         android:id="@+id/register_register"
         android:layout_width="103dp"
         android:layout_height="37dp"
-        android:layout_marginLeft="318dp"
-        android:layout_marginTop="234dp"
+        android:layout_marginLeft="313dp"
+        android:layout_marginTop="280dp"
         android:text="Register"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -131,8 +136,8 @@
         android:id="@+id/register_usernametv"
         android:layout_width="175dp"
         android:layout_height="25dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="58dp"
         app:layout_constraintLeft_toRightOf="@+id/register_username"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -140,8 +145,8 @@
         android:id="@+id/register_emailtv"
         android:layout_width="175dp"
         android:layout_height="25dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="116dp"
         app:layout_constraintLeft_toRightOf="@+id/register_email"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -149,8 +154,8 @@
         android:id="@+id/register_passwordtv"
         android:layout_width="175dp"
         android:layout_height="25dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="126dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="174dp"
         app:layout_constraintLeft_toRightOf="@+id/register_password"
         app:layout_constraintTop_toTopOf="parent" />
 

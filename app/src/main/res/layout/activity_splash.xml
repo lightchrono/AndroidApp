@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/splashScreenBackground"
+    android:background="@drawable/brawlfull"
     tools:context="com.example.light.androidapp.Activities.Splash">
 
 
@@ -12,15 +12,16 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GAME"
-        android:textSize="100dp"
-        android:textColor="@color/White"
+        android:text="The Brawl Game"
+        android:textSize="65sp"
+        android:textStyle="bold"
+        android:textColor="@color/TextColor"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="6dp" />
 
     <ProgressBar
         android:id="@+id/splashScreenProgressBar"

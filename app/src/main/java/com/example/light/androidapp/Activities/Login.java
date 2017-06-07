@@ -45,14 +45,19 @@ public class Login extends AppCompatActivity {
                     public void run() {
                         try {
                             Log.d("Socket","Trying to connect...");
-                            socket=new Socket(InetAddress.getByName("192.168.0.102"),11155);
+                            socket=new Socket(InetAddress.getByName("5.15.31.74"),11155);
                             Log.d("Socket","Connection on");
                             BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
-                            writer.print("login"+"\r\n");writer.flush();
-                            writer.print("q"+"\r\n");writer.flush();
-                            writer.print("q"+"\r\n");writer.flush();
+                            writer.println("login"+"\r");writer.flush();
+                            writer.println("q"+"\r");writer.flush();
+                            writer.println("q"+"\r");writer.flush();
                             String str=reader.readLine();
+                            if(str.equals("logingood"))
+                            {
+                                Intent main=new Intent(getBaseContext(),MainMenu.class);
+                                startActivity(main);
+                            }
                             Log.d("Socket",str );
 
                         } catch (IOException e) {
