@@ -1,6 +1,7 @@
 package com.example.light.androidapp.Activities;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.light.androidapp.MySocket;
 import com.example.light.androidapp.R;
 
 import java.io.BufferedReader;
@@ -26,6 +28,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         final Button registerB=(Button) findViewById(R.id.RegisterB);
         registerB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +49,7 @@ public class Login extends AppCompatActivity {
                         try {
                             Log.d("Socket","Trying to connect...");
                             socket=new Socket(InetAddress.getByName("192.168.0.102"),11155);
+                            ((MySocket)activity.getApplication()).setSocket(socket);
                             Log.d("Socket","Connection on");
                             BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
@@ -54,6 +58,16 @@ public class Login extends AppCompatActivity {
                             writer.print("q"+"\r\n");writer.flush();
                             String str=reader.readLine();
                             Log.d("Socket",str );
+                            if(str.equals("logingood"))
+                            {
+                                MySocket sock=new MySocket();
+                                sock.setSocket(socket);
+                                Intent intent=new Intent(getBaseContext(),MainMenu.class);
+                                startActivity(intent);
+                            }
+
+
+
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -64,3 +78,4 @@ public class Login extends AppCompatActivity {
         });
     }
 }
+

@@ -2,11 +2,19 @@ package com.example.light.androidapp.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.light.androidapp.MySocket;
 import com.example.light.androidapp.R;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 public class FirstPlayer extends AppCompatActivity {
 
@@ -15,10 +23,27 @@ public class FirstPlayer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_player);
 
+        MySocket sock=(MySocket) getApplication();
+        final Socket socket = sock.getSocket();
+
         Button rockButton=(Button)findViewById(R.id.first_rockbutton);
         rockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
+                            BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                            writer.write("rock\r");writer.flush();
+                            Log.d("Socket",reader.readLine());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }).start();
 
             }
         });
@@ -26,7 +51,20 @@ public class FirstPlayer extends AppCompatActivity {
         paperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
+                            BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                            writer.write("paper\r");writer.flush();
+                            Log.d("Socket",reader.readLine());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
+                    }
+                }).start();
             }
         });
 
@@ -34,11 +72,22 @@ public class FirstPlayer extends AppCompatActivity {
         scissorsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
+                            BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                            writer.write("scissor\r");writer.flush();
+                            Log.d("Socket",reader.readLine());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
+                    }
+                }).start();
             }
         });
         TextView winorlose=(TextView)findViewById(R.id.winorlose);
-        //winorlose textview
-        //enemychoose
     }
 }
