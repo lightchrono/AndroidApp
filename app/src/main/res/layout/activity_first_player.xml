@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/TextColor"
+    android:background="@color/Turcoaz"
     tools:context="com.example.light.androidapp.Activities.FirstPlayer">
 
     <Button
