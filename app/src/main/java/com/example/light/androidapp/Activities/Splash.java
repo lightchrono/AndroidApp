@@ -1,17 +1,11 @@
 package com.example.light.androidapp.Activities;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 
-import com.example.light.androidapp.MainActivity;
 import com.example.light.androidapp.R;
 
 public class Splash extends AppCompatActivity {
@@ -44,6 +38,7 @@ public class Splash extends AppCompatActivity {
                 }
                 Intent login=new Intent(context,Login.class);
                 startActivity(login);
+                finish();
             }
         }).start();
     }

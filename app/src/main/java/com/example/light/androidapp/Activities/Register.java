@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.example.light.androidapp.R;
 
 import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -101,6 +100,7 @@ public class Register extends AppCompatActivity {
                             if(registerCheck.equals("registergood")){
                                 Intent login=new Intent(getBaseContext(),Login.class);
                                 startActivity(login);
+                                finish();
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -118,6 +118,7 @@ public class Register extends AppCompatActivity {
 
                 Intent Login=new Intent(getBaseContext(),Login.class);
                 startActivity(Login);
+                finish();
             }
         });
 

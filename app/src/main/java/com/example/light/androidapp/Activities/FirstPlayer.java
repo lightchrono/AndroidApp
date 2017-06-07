@@ -43,6 +43,7 @@ public class FirstPlayer extends AppCompatActivity {
                             Log.d("Socket",reader.readLine());
                             Intent test=new Intent(getBaseContext(),game.class);
                             startActivity(test);
+                            finish();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -66,6 +67,7 @@ public class FirstPlayer extends AppCompatActivity {
                             Log.d("Socket",reader.readLine());
                             Intent test=new Intent(getBaseContext(),game.class);
                             startActivity(test);
+                            finish();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -89,6 +91,7 @@ public class FirstPlayer extends AppCompatActivity {
                             Log.d("Socket",reader.readLine());
                             Intent test=new Intent(getBaseContext(),game.class);
                             startActivity(test);
+                            finish();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

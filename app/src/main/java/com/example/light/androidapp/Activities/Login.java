@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity {
                     public void run() {
                         try {
                             Log.d("Socket","Trying to connect...");
-                            socket=new Socket(InetAddress.getByName("5.15.31.74"),11155);
+                            socket=new Socket(InetAddress.getByName("192.168.1.147"),11155);
                             Log.d("Socket","Connection on");
                             BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
@@ -57,6 +57,7 @@ public class Login extends AppCompatActivity {
                             {
                                 Intent main=new Intent(getBaseContext(),MainMenu.class);
                                 startActivity(main);
+                                finish();
                             }
                             Log.d("Socket",str );
 
