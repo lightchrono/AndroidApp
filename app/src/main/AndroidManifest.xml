@@ -32,7 +32,10 @@
         <activity
             android:name=".Activities.MainMenu"
             android:screenOrientation="landscape" />
-        <activity android:name=".Activities.FirstPlayer" android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".Activities.FirstPlayer"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Activities.game" android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>
