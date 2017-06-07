@@ -1,5 +1,6 @@
 package com.example.light.androidapp.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,8 @@ public class FirstPlayer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_player);
 
+        TextView winorlose=(TextView)findViewById(R.id.winorlose);
+
         MySocket sock=(MySocket) getApplication();
         final Socket socket = sock.getSocket();
 
@@ -38,6 +41,8 @@ public class FirstPlayer extends AppCompatActivity {
                             BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             writer.write("rock\r");writer.flush();
                             Log.d("Socket",reader.readLine());
+                            Intent test=new Intent(getBaseContext(),game.class);
+                            startActivity(test);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -59,6 +64,8 @@ public class FirstPlayer extends AppCompatActivity {
                             BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             writer.write("paper\r");writer.flush();
                             Log.d("Socket",reader.readLine());
+                            Intent test=new Intent(getBaseContext(),game.class);
+                            startActivity(test);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -80,6 +87,8 @@ public class FirstPlayer extends AppCompatActivity {
                             BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             writer.write("scissor\r");writer.flush();
                             Log.d("Socket",reader.readLine());
+                            Intent test=new Intent(getBaseContext(),game.class);
+                            startActivity(test);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -88,6 +97,6 @@ public class FirstPlayer extends AppCompatActivity {
                 }).start();
             }
         });
-        TextView winorlose=(TextView)findViewById(R.id.winorlose);
+
     }
 }
