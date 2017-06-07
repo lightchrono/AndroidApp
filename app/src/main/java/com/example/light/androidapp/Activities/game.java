@@ -23,8 +23,21 @@ public class game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+
         MySocket sock = (MySocket) getApplication();
         final Socket socket = sock.getSocket();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    Log.d("game", reader.readLine());
+                    Log.d("game", reader.readLine());
+
+                } catch (Exception ex) {
+                }
+            }
+        }).start();
 
         Button a1 = (Button) findViewById(R.id.game_a1);
         Button a2 = (Button) findViewById(R.id.game_a2);
@@ -61,7 +74,10 @@ public class game extends AppCompatActivity {
         a2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 new Thread(new Runnable() {
+                    String p1HP="";String botHP="";
+                   //String botHP=reader.readLine();
                     @Override
                     public void run() {
                         try {
@@ -69,17 +85,28 @@ public class game extends AppCompatActivity {
                             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             writer.write("1\r");
                             writer.flush();
-                            String p1HP=reader.readLine();
-                            String botHP=reader.readLine();
-                            hpP1.setProgress(50);
-                            hpBot.setProgress(Integer.valueOf(botHP));
+                            botHP=reader.readLine();
+                            p1HP=reader.readLine();
+
+
+
+                          //  hpP1.setProgress(Integer.parseInt(p1HP));
+                           // hpBot.setProgress(Integer.parseInt(botHP));
 
 
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+                        Log.d("HP","player: "+p1HP);
+                        Log.d("HP","BOT: "+botHP);
+                        try {
+                            hpP1.setProgress(Integer.parseInt(p1HP));
+                            hpBot.setProgress(Integer.parseInt(botHP));
+                        }
+                        catch (Exception ex){}
                     }
                 }).start();
+
             }
         });
 
@@ -127,3 +154,4 @@ public class game extends AppCompatActivity {
 
     }
 }
+

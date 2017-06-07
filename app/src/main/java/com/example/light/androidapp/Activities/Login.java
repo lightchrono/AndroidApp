@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.light.androidapp.MySocket;
 import com.example.light.androidapp.R;
 
 import java.io.BufferedReader;
@@ -46,6 +47,7 @@ public class Login extends AppCompatActivity {
                         try {
                             Log.d("Socket","Trying to connect...");
                             socket=new Socket(InetAddress.getByName("192.168.1.147"),11155);
+                            ((MySocket)activity.getApplication()).setSocket(socket);
                             Log.d("Socket","Connection on");
                             BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);

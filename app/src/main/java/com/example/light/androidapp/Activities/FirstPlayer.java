@@ -1,9 +1,8 @@
 package com.example.light.androidapp.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +11,6 @@ import com.example.light.androidapp.MySocket;
 import com.example.light.androidapp.R;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -33,24 +31,19 @@ public class FirstPlayer extends AppCompatActivity {
         rockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
-                            BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                            writer.write("rock\r");writer.flush();
-                            Log.d("Socket",reader.readLine());
-                            Intent test=new Intent(getBaseContext(),game.class);
-                            startActivity(test);
-                            finish();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                }).start();
-
+               new Thread(new Runnable() {
+                   @Override
+                   public void run() {
+                       try {
+                           PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+                           BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                           writer.write("rock\r");writer.flush();
+                       }catch (Exception ex){}
+                   }
+               }).start();
+                Intent test=new Intent(getBaseContext(),game.class);
+                startActivity(test);
+                finish();
             }
         });
         Button paperButton=(Button)findViewById(R.id.first_paperbutton);
@@ -61,19 +54,15 @@ public class FirstPlayer extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
-                            BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+                            BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             writer.write("paper\r");writer.flush();
-                            Log.d("Socket",reader.readLine());
-                            Intent test=new Intent(getBaseContext(),game.class);
-                            startActivity(test);
-                            finish();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
+                        }catch (Exception ex){}
                     }
                 }).start();
+                Intent test=new Intent(getBaseContext(),game.class);
+                startActivity(test);
+                finish();
             }
         });
 
@@ -85,19 +74,15 @@ public class FirstPlayer extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
-                            BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+                            BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                             writer.write("scissor\r");writer.flush();
-                            Log.d("Socket",reader.readLine());
-                            Intent test=new Intent(getBaseContext(),game.class);
-                            startActivity(test);
-                            finish();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
+                        }catch (Exception ex){}
                     }
                 }).start();
+                Intent test=new Intent(getBaseContext(),game.class);
+                startActivity(test);
+                finish();
             }
         });
 
