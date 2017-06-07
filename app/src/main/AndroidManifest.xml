@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".MySocket"
         android:allowBackup="true"
         android:icon="@mipmap/brawlicon"
         android:label="@string/app_name"
@@ -27,14 +28,14 @@
         <activity
             android:name=".Activities.Login"
             android:screenOrientation="landscape" />
-        <activity android:name=".Activities.Register"
-            android:screenOrientation="landscape" />
+        <activity android:name=".Activities.Register" />
         <activity
             android:name=".Activities.MainMenu"
             android:screenOrientation="landscape" />
-        <activity android:name=".Activities.FirstPlayer"
-            android:screenOrientation="landscape">
-        </activity>
+        <activity
+            android:name=".Activities.FirstPlayer"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Activities.game" android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>
